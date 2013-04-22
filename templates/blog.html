@@ -1,0 +1,21 @@
+{% extends('layout.html') %}
+
+{% block content %}
+
+	{% for post in posts %}
+		<article>
+
+			<header>
+				<h3>{{ post.title }}</h3>
+				<p>Authoring date: {{ post.date }}</p>
+			</header>
+			
+			<p>{{ post.content }}</p>
+
+		</article>
+
+	{% else %}
+		<p>There are no posts..</p>
+	{% endfor %}
+
+{% endblock %}

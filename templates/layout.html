@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Flask Blog</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+
+	<body>
+
+		 <header>
+		 	
+			<div class="navbar">
+			  <div class="navbar-inner">
+			    <a class="brand" href="#">Flask Blog</a>
+			    <ul class="nav">
+			      <li><a href="/">Home</a></li>
+			      <li><a href="/about">About</a></li>			      			      
+			    </ul>
+			    <ul class="nav pull-right">
+			    {% if session.logged_in %}
+			    <li><a href="/admin">Articles</a></li>			      
+				<li><a href="/logout">Logout</a></li>			      
+			    {% else %}
+			    <li><a href="/login">Login</a></li>			      
+			    {% endif %}
+				</ul>
+			  </div>
+			</div>
+
+		 </header>
+
+		<div class="container">
+
+			{% for message in get_flashed_messages() %}
+				
+				<div class="alert alert-info">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  {{ message }}
+				</div>
+
+			{% endfor %}
+
+			{% block content %}
+			{% endblock %}
+		</div>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+	</body>
+</html>

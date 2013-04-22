@@ -1,0 +1,27 @@
+body {
+	padding:10px;
+}
+article {
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #AAA;
+}
+
+article header h3 {
+	font-size: 20px;
+	margin: 5px 0;
+}
+
+article header p {
+	font-family: Verdana, sans-serif;
+	font-size:13px;
+	font-style: italic;
+}
+
+article p {
+	line-height: 1.7em;
+}
+
+textarea {
+	width:100%;
+}
