@@ -107,6 +107,7 @@ def add():
 				cur = g.db.execute('INSERT INTO fblog (title, content, date, status) VALUES (?, ?, ?, 1)', [form.title.data, form.content.data, d])
 				g.db.commit()
 				g.db.close()
+				flash('Article added successfully')
 				return redirect( url_for('admin') )
 
 		elif request.method == 'GET':
